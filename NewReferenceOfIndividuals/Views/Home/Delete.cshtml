@@ -1,0 +1,99 @@
+﻿@model NewReferenceOfIndividuals.Models.Person
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>წაშლის გვერდი</h1>
+
+<h3>დარწმნებული ხარ, რომ ნამდვილად მონაცემის წაშლა გინდა?</h3>
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Identificator)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Identificator)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstNameGeo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstNameGeo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstNameEn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstNameEn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastNameGeo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastNameGeo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastNameEn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastNameEn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonalNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PersonalNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Addres)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Addres)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mobile1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mobile1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mobile2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mobile2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Picture)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Picture)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KinshipIdentificator)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KinshipIdentificator)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WhoIs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WhoIs)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Identificator" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        
+    </form>
+</div>

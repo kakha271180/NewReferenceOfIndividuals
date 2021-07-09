@@ -1,0 +1,110 @@
+﻿
+@model NewReferenceOfIndividuals.ReferenceIndividualService.Helper.PersonList
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>პიროვნების სია</h1>
+
+<p>
+    <a asp-action="Create">პიროვნების დამატება</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="col-sm-2">
+                Identificator
+            </th>
+            <th class="col-sm-2">
+                FirstNameGeo
+            </th>
+            <th class="col-sm-2">
+                FirstNameEn
+            </th>
+            <th class="col-sm-2">
+                LastNameGeo
+            </th>
+            <th class="col-sm-2">
+                LastNameEn
+            </th>
+            <th class="col-sm-2">
+                PersonalNumber
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.people)
+        {
+
+
+
+
+            <tr>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.Identificator)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstNameGeo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstNameEn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastNameGeo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastNameEn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PersonalNumber)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-Identificator="@item.Identificator ">Edit</a> |
+                    <a asp-controller="Home" asp-action="Details" asp-route-Identificator="@item.Identificator ">Details</a> |
+                    <a asp-action="Delete" asp-route-identity="@item.Identificator">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<div>
+    @{
+        int total = Model.TotalCount;
+        int psaiz = Model.PageSize;
+
+        int Ppage = Model.Page;
+
+        int tt = 0;
+
+        if (total % psaiz == 0)
+        {
+            tt = total / psaiz;
+        }
+        else
+        {
+            tt = total / psaiz + 1;
+        }
+
+        for (int i = 1; i <= tt; i++)
+        {
+           <a class="monisvna" id="monisvna" asp-controller="Home" asp-action="Index" asp-route-page="@i">@i</a>
+        }
+    }
+</div>
+
+<div>
+
+    @{
+        ViewData["shecdoma"] = "Details";
+    }
+</div>
+@*<script>
+        alert.call(ViewBag.message);
+    </script>*@

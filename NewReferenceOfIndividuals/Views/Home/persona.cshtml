@@ -1,0 +1,64 @@
+﻿@model IEnumerable<NewReferenceOfIndividuals.ReferenceIndividualService.Helper.PersonList.Persons>
+
+@{
+    ViewData["Title"] = "persona";
+}
+
+<h1>persona</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Identificator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstNameGeo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstNameEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastNameGeo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastNameEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonalNumber)
+            </th>
+          
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Identificator)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstNameGeo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstNameEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastNameGeo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastNameEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalNumber)
+            </td>
+
+            
+
+            
+        </tr>
+}
+    </tbody>
+</table>

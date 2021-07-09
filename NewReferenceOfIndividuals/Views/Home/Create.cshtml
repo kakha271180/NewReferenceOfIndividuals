@@ -1,0 +1,90 @@
+﻿@model NewReferenceOfIndividuals.Models.Person
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>დამატების გვერდი</h1>
+
+<!--<h4>Person</h4>-->
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form enctype="multipart/form-data" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          
+            <div class="form-group">
+                <label asp-for="FirstNameGeo" class="control-label"></label>
+                <input asp-for="FirstNameGeo" class="form-control" />
+                <span asp-validation-for="FirstNameGeo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstNameEn" class="control-label"></label>
+                <input asp-for="FirstNameEn" class="form-control" />
+                <span asp-validation-for="FirstNameEn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastNameGeo" class="control-label"></label>
+                <input asp-for="LastNameGeo" class="form-control" />
+                <span asp-validation-for="LastNameGeo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastNameEn" class="control-label"></label>
+                <input asp-for="LastNameEn" class="form-control" />
+                <span asp-validation-for="LastNameEn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonalNumber" class="control-label"></label>
+                <input type="number" asp-for="PersonalNumber" class="form-control" />
+                <span asp-validation-for="PersonalNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input type="date" asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Addres" class="control-label"></label>
+                <input asp-for="Addres" class="form-control" />
+                <span asp-validation-for="Addres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mobile1" class="control-label"></label>
+                <input asp-for="Mobile1" class="form-control" />
+                <span asp-validation-for="Mobile1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mobile2" class="control-label"></label>
+                <input asp-for="Mobile2" class="form-control" />
+                <span asp-validation-for="Mobile2" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <p>Upload one or more files using this form:</p>
+                    <input type="file" name="files" multiple />
+                </div>
+            </div>
+          
+            <div class="form-group">
+                <label asp-for="KinshipIdentificator" class="control-label"></label>
+                <input asp-for="KinshipIdentificator" class="form-control" />
+                <span asp-validation-for="KinshipIdentificator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WhoIs" class="control-label"></label>
+                <input asp-for="WhoIs" class="form-control" />
+                <span asp-validation-for="WhoIs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="დამატება" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
